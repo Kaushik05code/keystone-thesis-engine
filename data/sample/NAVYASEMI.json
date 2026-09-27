@@ -1,0 +1,43 @@
+{
+  "ticker": "NAVYASEMI",
+  "name": "Navya Semiconductor Packaging Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "description": "Early-stage OSAT: assembles, packages and tests chips for global fabless customers from a new facility funded by its IPO.",
+  "segments": [
+    {
+      "name": "OSAT packaging and test",
+      "revenue_share_pct": 90
+    },
+    {
+      "name": "Electronics manufacturing services",
+      "revenue_share_pct": 10
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 480,
+    "revenue_cagr_3y": 64.0,
+    "ebitda_margin": 6.0,
+    "roce": 3.0,
+    "cash": 1900,
+    "total_debt": 600,
+    "interest_expense": 45,
+    "capex": 1400,
+    "rnd_pct_revenue": 9.0,
+    "export_share_pct": 55,
+    "promoter_holding_pct": 44,
+    "promoter_pledge_pct": 0,
+    "top_customer_share_pct": 38,
+    "receivable_days": 75,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 4,
+    "fcf_conversion_pct": -300,
+    "pe": -1
+  }
+}

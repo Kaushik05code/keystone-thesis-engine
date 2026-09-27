@@ -1,0 +1,3 @@
+pyyaml>=6.0
+# optional: live market data without an API key
+# yfinance>=0.2.40

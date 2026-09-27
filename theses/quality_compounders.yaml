@@ -1,0 +1,117 @@
+# A market-agnostic "quality at a reasonable price" thesis. It does not care
+# which sector a company is in; it rewards high returns on capital, clean
+# balance sheets and sensible prices. Score the same company under this and
+# under india_structural_growth to see how much the thesis drives the answer.
+
+thesis:
+  id: quality_compounders
+  name: Quality Compounders
+  author: Kaushik G L
+  as_of: "2026-07-01"
+  horizon_years: 10
+  summary: >
+    Great businesses earn high returns on capital for a long time, convert
+    profit into cash, need little debt and are run by owners with skin in the
+    game. Buy them when the price does not already assume perfection.
+
+weights:
+  theme_fit: 0.05
+  macro_alignment: 0.05
+  strategy_fit: 0.35
+  financial_resilience: 0.20
+  execution_risk: 0.20
+  valuation_tolerance: 0.15
+
+themes:
+  unmapped_score: 60     # sector-agnostic: everything earns a neutral theme score
+  max_score: 80
+  list:
+    - id: consumer_brands
+      name: Consumer brands
+      necessity: 70
+      keywords: [consumer, brand, apparel, retail, fmcg, beverages, footwear]
+    - id: software
+      name: Software & services
+      necessity: 70
+      keywords: [software, saas, it services, platform]
+
+macro:
+  max_score: 85
+  min_signals_for_full_credit: 2
+  signals:
+    - id: real_gdp_growth
+      name: Real GDP growth (%)
+      value: 6.5
+      trend: flat
+      supports_when: {above: 5.0}
+      confidence: 0.9
+      themes: [all]
+    - id: cpi_inflation
+      name: CPI inflation (%)
+      value: 3.2
+      trend: down
+      supports_when: {below: 6.0}
+      confidence: 0.85
+      themes: [all]
+
+strategy:
+  min_coverage: 0.6
+  traits:
+    - {id: returns, name: ROCE (%), metric: roce, good: 25, bad: 12, weight: 0.35}
+    - {id: margins, name: EBITDA margin (%), metric: ebitda_margin, good: 25, bad: 10, weight: 0.20}
+    - {id: cash_conversion, name: FCF / net profit (%), metric: fcf_conversion_pct, good: 90, bad: 40, weight: 0.25}
+    - {id: growth, name: 3-year revenue CAGR (%), metric: revenue_cagr_3y, good: 15, bad: 5, weight: 0.20}
+
+resilience:
+  tax_rate: 0.25
+  max_months: 60
+  max_score: 90
+  score_on: worst
+  scenarios:
+    - {id: downturn, name: "Revenue -25%, margin -300 bps", revenue_shock_pct: -25, margin_change_bps: -300}
+    - {id: deep_downturn, name: "Revenue -40%, margin -500 bps, capex halved", revenue_shock_pct: -40, margin_change_bps: -500, capex_cut_pct: 50}
+  survival_curve:
+    - {min_months: 48, max_months: 60, score: [95, 100]}
+    - {min_months: 36, max_months: 48, score: [80, 95]}
+    - {min_months: 24, max_months: 36, score: [65, 80]}
+    - {min_months: 12, max_months: 24, score: [40, 65]}
+    - {min_months: 0, max_months: 12, score: [0, 40]}
+  leverage_adjustment:
+    - {max_net_debt_ebitda: 0.0, adjust: 5}
+    - {max_net_debt_ebitda: 1.0, adjust: 0}
+    - {max_net_debt_ebitda: 2.0, adjust: -8}
+    - {max_net_debt_ebitda: null, adjust: -20}
+
+execution:
+  base_score: 90
+  unknown_cap: 70
+  red_flags:
+    - {id: pledge, name: Promoter shares pledged, metric: promoter_pledge_pct, above: 5, penalty: 25}
+    - {id: auditor, name: Auditor changed in last 3 years, metric: auditor_changes_3y, above: 0, penalty: 15}
+    - {id: related_party, name: Related-party revenue, metric: related_party_revenue_pct, above: 5, penalty: 15}
+    - {id: receivables, name: Stretched receivables, metric: receivable_days, above: 90, penalty: 10}
+
+valuation:
+  cost_of_equity_pct: 12.0
+  stage_years: 10
+  terminal_growth_pct: 5
+  growth_cap_pct: 14
+  loss_making_score: 0
+  brackets:
+    - {max_gap_pp: -4, score: 95, label: "Bargain for the quality"}
+    - {max_gap_pp: -1, score: 75, label: "Reasonable price"}
+    - {max_gap_pp: 1, score: 55, label: "Full price"}
+    - {max_gap_pp: 3, score: 30, label: "Priced for perfection"}
+    - {max_gap_pp: null, score: 10, label: "Too expensive for this thesis"}
+
+gates:
+  cap: 35
+  rules:
+    - {id: profitable, name: Profitable (P/E above 0), metric: pe, above: 0}
+    - {id: low_leverage, name: Net debt / EBITDA below 2x, metric: net_debt_ebitda, below: 2}
+
+bands:
+  - {min: 72, label: Compounder, description: "High-quality business at a price that leaves room for error."}
+  - {min: 55, label: Quality watchlist, description: "Good business; wait for a better price or more evidence."}
+  - {min: 40, label: Average, description: "Nothing disqualifying, nothing special."}
+  - {min: 0, label: Avoid, description: "Fails the quality bar."}

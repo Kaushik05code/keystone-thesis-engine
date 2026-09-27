@@ -1,0 +1,43 @@
+{
+  "ticker": "METROFASH",
+  "name": "Metro Fashion Retail Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Consumer Discretionary",
+  "industry": "Apparel retail",
+  "description": "Runs 600 value-fashion stores across tier-2 and tier-3 cities with a growing private-label online channel.",
+  "segments": [
+    {
+      "name": "Apparel retail stores",
+      "revenue_share_pct": 88
+    },
+    {
+      "name": "Private-label e-commerce",
+      "revenue_share_pct": 12
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 9800,
+    "revenue_cagr_3y": 11.0,
+    "ebitda_margin": 16.0,
+    "roce": 24.0,
+    "cash": 700,
+    "total_debt": 400,
+    "interest_expense": 60,
+    "capex": 450,
+    "rnd_pct_revenue": 0.0,
+    "export_share_pct": 0,
+    "promoter_holding_pct": 58,
+    "promoter_pledge_pct": 0,
+    "top_customer_share_pct": 1,
+    "receivable_days": 8,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 3,
+    "fcf_conversion_pct": 92,
+    "pe": 44
+  }
+}

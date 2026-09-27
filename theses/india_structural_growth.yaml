@@ -1,0 +1,224 @@
+# The original Keystone thesis: which listed Indian companies are structurally
+# built to compound through India's next 10-20 years of growth?
+# Copy this file and change anything below to score companies against YOUR view.
+
+thesis:
+  id: india_structural_growth
+  name: India Structural Growth
+  author: Kaushik G L
+  as_of: "2026-07-01"
+  horizon_years: 15
+  summary: >
+    India's next leg of growth needs capacity it does not yet have: defence
+    indigenisation, energy transition, semiconductors, logistics, digital and
+    financial rails, water and critical minerals. Companies that own real
+    capacity in these areas, fund it from their own cash flows and keep clean
+    governance should compound. Everything else is scored on its merits but
+    gets little credit for theme fit.
+
+# Six components, weights must sum to 1.0.
+weights:
+  theme_fit: 0.18
+  macro_alignment: 0.12
+  strategy_fit: 0.22
+  financial_resilience: 0.22
+  execution_risk: 0.18
+  valuation_tolerance: 0.08
+
+# 1. THEME FIT: where the thesis says value will be created.
+#    necessity = how essential this area is to the thesis (0-100).
+themes:
+  unmapped_score: 25   # revenue outside every theme earns this
+  max_score: 92        # nothing is perfectly necessary
+  list:
+    - id: defence
+      name: Defence & aerospace
+      necessity: 90
+      keywords: [defence, defense, aerospace, radar, missile, avionics, electronic warfare, naval, ammunition]
+    - id: energy_transition
+      name: Renewables & energy transition
+      necessity: 88
+      keywords: [solar, wind, renewable, green hydrogen, transmission, battery storage, power grid, energy transition]
+    - id: semiconductors
+      name: Semiconductors & electronics manufacturing
+      necessity: 86
+      keywords: [semiconductor, chip, wafer, osat, packaging and test, electronics manufacturing, ems]
+    - id: logistics
+      name: Logistics & freight
+      necessity: 78
+      keywords: [logistics, freight, warehousing, port, rail, container, shipping, cold chain]
+    - id: digital_infra
+      name: Digital infrastructure
+      necessity: 80
+      keywords: [data centre, data center, fibre, fiber, tower, cloud, telecom infrastructure]
+    - id: financial_infra
+      name: Financial infrastructure
+      necessity: 72
+      keywords: [exchange, depository, payments, credit bureau, registrar, clearing]
+    - id: advanced_manufacturing
+      name: Advanced manufacturing
+      necessity: 76
+      keywords: [capital goods, precision engineering, industrial automation, machine tools, specialty chemicals]
+    - id: water
+      name: Water infrastructure
+      necessity: 82
+      keywords: [water, desalination, wastewater, irrigation, sewage]
+    - id: critical_minerals
+      name: Critical minerals processing
+      necessity: 84
+      keywords: [lithium, rare earth, critical mineral, graphite, cobalt, refining]
+    - id: pharma_biologics
+      name: Pharma & biologics
+      necessity: 70
+      keywords: [biologics, biosimilar, api manufacturing, cdmo, vaccine]
+    - id: ev_supply_chain
+      name: EV supply chain
+      necessity: 80
+      keywords: [electric vehicle, ev component, battery pack, cell manufacturing, charging]
+
+# 2. MACRO ALIGNMENT: the analyst's read of the macro, as of the date above.
+#    The values below are ILLUSTRATIVE. Replace them with current data from
+#    MOSPI / RBI / budget documents before relying on any score. A signal "supports" the thesis
+#    when its value sits on the right side of the threshold.
+macro:
+  max_score: 85                 # even perfect macro earns at most 85: macro can turn
+  min_signals_for_full_credit: 4
+  signals:
+    - id: real_gdp_growth
+      name: Real GDP growth (%)
+      value: 6.5
+      trend: flat
+      supports_when: {above: 6.0}
+      confidence: 0.9
+      themes: [all]
+    - id: cpi_inflation
+      name: CPI inflation (%)
+      value: 3.2
+      trend: down
+      supports_when: {below: 5.0}
+      confidence: 0.85
+      themes: [all]
+    - id: govt_capex_growth
+      name: Central government capex growth (% YoY)
+      value: 10.0
+      trend: flat
+      supports_when: {above: 8.0}
+      confidence: 0.75
+      themes: [all]
+    - id: bank_credit_growth
+      name: Bank credit growth (% YoY)
+      value: 11.0
+      trend: down
+      supports_when: {above: 10.0}
+      confidence: 0.8
+      themes: [all]
+    - id: defence_capital_budget
+      name: Defence capital outlay growth (% YoY)
+      value: 12.0
+      trend: up
+      supports_when: {above: 8.0}
+      confidence: 0.8
+      themes: [defence]
+    - id: re_capacity_additions
+      name: Renewable capacity added (GW per year)
+      value: 30.0
+      trend: up
+      supports_when: {above: 20.0}
+      confidence: 0.8
+      themes: [energy_transition, critical_minerals, ev_supply_chain]
+    - id: electronics_exports_growth
+      name: Electronics exports growth (% YoY)
+      value: 25.0
+      trend: up
+      supports_when: {above: 15.0}
+      confidence: 0.7
+      themes: [semiconductors, advanced_manufacturing]
+    - id: usd_inr_depreciation
+      name: USD-INR depreciation (% YoY)
+      value: 3.5
+      trend: up
+      supports_when: {below: 4.0}
+      confidence: 0.7
+      themes: [semiconductors, energy_transition, critical_minerals]
+
+# 3. STRATEGY FIT: what a future winner looks like (the "future winner template").
+#    Points scale linearly from `bad` (0) to `good` (100).
+strategy:
+  min_coverage: 0.6
+  traits:
+    - {id: growth, name: 3-year revenue CAGR (%), metric: revenue_cagr_3y, good: 20, bad: 6, weight: 0.25}
+    - {id: returns, name: ROCE (%), metric: roce, good: 22, bad: 9, weight: 0.25}
+    - {id: tech_ownership, name: R&D as % of revenue, metric: rnd_pct_revenue, good: 5, bad: 0.5, weight: 0.15}
+    - {id: global_edge, name: Export share of revenue (%), metric: export_share_pct, good: 30, bad: 0, weight: 0.10}
+    - {id: margins, name: EBITDA margin (%), metric: ebitda_margin, good: 22, bad: 8, weight: 0.15}
+    - {id: cash_conversion, name: FCF / net profit (%), metric: fcf_conversion_pct, good: 80, bad: 20, weight: 0.10}
+
+# 4. FINANCIAL RESILIENCE: stress the balance sheet and count months of runway.
+resilience:
+  tax_rate: 0.25
+  max_months: 60
+  max_score: 90        # no company scores 100: unknown risks always exist
+  score_on: combined   # a scenario id, or "worst"
+  scenarios:
+    - {id: mild, name: "Revenue -20%, margin -200 bps", revenue_shock_pct: -20, margin_change_bps: -200}
+    - {id: severe, name: "Revenue -40%, margin -400 bps", revenue_shock_pct: -40, margin_change_bps: -400}
+    - {id: combined, name: "Severe + growth capex frozen", revenue_shock_pct: -40, margin_change_bps: -400, capex_cut_pct: 60}
+  survival_curve:     # months of runway -> score band
+    - {min_months: 48, max_months: 60, score: [95, 100]}
+    - {min_months: 36, max_months: 48, score: [80, 95]}
+    - {min_months: 24, max_months: 36, score: [70, 80]}
+    - {min_months: 18, max_months: 24, score: [55, 70]}
+    - {min_months: 12, max_months: 18, score: [40, 55]}
+    - {min_months: 6, max_months: 12, score: [10, 40]}
+    - {min_months: 0, max_months: 6, score: [0, 10]}
+  leverage_adjustment:   # net debt / EBITDA -> points added or removed
+    - {max_net_debt_ebitda: 0.5, adjust: 5}
+    - {max_net_debt_ebitda: 1.0, adjust: 2}
+    - {max_net_debt_ebitda: 2.0, adjust: 0}
+    - {max_net_debt_ebitda: 3.0, adjust: -5}
+    - {max_net_debt_ebitda: 4.0, adjust: -10}
+    - {max_net_debt_ebitda: 5.0, adjust: -15}
+    - {max_net_debt_ebitda: null, adjust: -25}
+
+# 5. EXECUTION RISK: start at base_score and subtract each red flag that fires.
+execution:
+  base_score: 90
+  unknown_cap: 70      # if fewer than half the flags can be checked
+  red_flags:
+    - {id: pledge, name: Promoter shares pledged, metric: promoter_pledge_pct, above: 10, penalty: 20}
+    - {id: customer_conc, name: Customer concentration, metric: top_customer_share_pct, above: 40, penalty: 10}
+    - {id: receivables, name: Stretched receivables, metric: receivable_days, above: 120, penalty: 12}
+    - {id: auditor, name: Auditor changed in last 3 years, metric: auditor_changes_3y, above: 0, penalty: 15}
+    - {id: related_party, name: Heavy related-party revenue, metric: related_party_revenue_pct, above: 10, penalty: 12}
+    - {id: low_skin, name: Low promoter holding, metric: promoter_holding_pct, below: 30, penalty: 6}
+
+# 6. VALUATION TOLERANCE: reverse DCF. Solve for the earnings growth the P/E is
+#    paying for (stage_years of growth, then terminal growth forever), minus the
+#    growth the company has delivered (capped). Lower gap = more room for error.
+valuation:
+  cost_of_equity_pct: 12.5
+  stage_years: 10
+  terminal_growth_pct: 5
+  growth_cap_pct: 18
+  loss_making_score: 10
+  brackets:
+    - {max_gap_pp: -5, score: 90, label: "Deep value: the price assumes far less growth than delivered"}
+    - {max_gap_pp: -2, score: 75, label: "Attractive: a real margin of safety"}
+    - {max_gap_pp: 0, score: 60, label: "Fair: a slim margin of safety"}
+    - {max_gap_pp: 2, score: 40, label: "Slightly rich: little room for error"}
+    - {max_gap_pp: 5, score: 20, label: "Expensive: the price needs everything to go right"}
+    - {max_gap_pp: null, score: 5, label: "Extreme premium: near-zero tolerance for error"}
+
+# DEAL-BREAKERS: fail any one and the overall score is capped.
+gates:
+  cap: 40
+  rules:
+    - {id: no_heavy_pledge, name: Promoter pledge below 25%, metric: promoter_pledge_pct, below: 25}
+    - {id: sane_leverage, name: Net debt / EBITDA below 5x, metric: net_debt_ebitda, below: 5}
+
+bands:
+  - {min: 75, label: Exceptional fit, description: "Structural alignment, financial strength and execution record of a long-duration compounder."}
+  - {min: 58, label: Strong fit, description: "Well positioned; minor gaps in execution or valuation buffer are manageable."}
+  - {min: 42, label: Moderate fit, description: "Relevant to the thesis, but meaningful execution or financial headwinds need monitoring."}
+  - {min: 25, label: Weak fit, description: "Material structural or financial gaps; unlikely to be a compounding winner."}
+  - {min: 0, label: Poor fit, description: "Poorly aligned with the thesis, or real risk of capital destruction."}

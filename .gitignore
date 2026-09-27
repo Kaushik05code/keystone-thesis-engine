@@ -1,0 +1,23 @@
+# secrets
+.env
+*.key
+*service-account*.json
+
+# outputs
+reports/
+*.log
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# os / editors
+.DS_Store
+.idea/
+.vscode/

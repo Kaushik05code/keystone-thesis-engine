@@ -1,0 +1,43 @@
+{
+  "ticker": "KAVERISOFT",
+  "name": "Kaveri Software Systems Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Technology",
+  "industry": "IT services",
+  "description": "Mid-sized IT services and SaaS company serving banks and insurers in the US and Europe.",
+  "segments": [
+    {
+      "name": "IT services",
+      "revenue_share_pct": 80
+    },
+    {
+      "name": "SaaS platforms",
+      "revenue_share_pct": 20
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 6400,
+    "revenue_cagr_3y": 13.0,
+    "ebitda_margin": 21.0,
+    "roce": 32.0,
+    "cash": 2300,
+    "total_debt": 0,
+    "interest_expense": 5,
+    "capex": 160,
+    "rnd_pct_revenue": 2.0,
+    "export_share_pct": 85,
+    "promoter_holding_pct": 47,
+    "promoter_pledge_pct": 0,
+    "top_customer_share_pct": 12,
+    "receivable_days": 70,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 1,
+    "fcf_conversion_pct": 95,
+    "pe": 27
+  }
+}

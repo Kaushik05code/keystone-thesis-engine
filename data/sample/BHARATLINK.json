@@ -1,0 +1,47 @@
+{
+  "ticker": "BHARATLINK",
+  "name": "Bharatlink Logistics Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Industrials",
+  "industry": "Integrated logistics",
+  "description": "Operates rail container freight, multi-modal warehousing and last-mile delivery across western and southern India.",
+  "segments": [
+    {
+      "name": "Rail container freight",
+      "revenue_share_pct": 60
+    },
+    {
+      "name": "Warehousing",
+      "revenue_share_pct": 30
+    },
+    {
+      "name": "Last-mile delivery",
+      "revenue_share_pct": 10
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 5200,
+    "revenue_cagr_3y": 19.0,
+    "ebitda_margin": 14.0,
+    "roce": 18.0,
+    "cash": 420,
+    "total_debt": 1300,
+    "interest_expense": 110,
+    "capex": 650,
+    "rnd_pct_revenue": 0.4,
+    "export_share_pct": 8,
+    "promoter_holding_pct": 55,
+    "promoter_pledge_pct": 0,
+    "top_customer_share_pct": 15,
+    "receivable_days": 62,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 3,
+    "fcf_conversion_pct": 60,
+    "pe": 38
+  }
+}

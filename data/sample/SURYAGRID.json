@@ -1,0 +1,43 @@
+{
+  "ticker": "SURYAGRID",
+  "name": "Suryagrid Renewables Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Utilities",
+  "industry": "Renewable power producer",
+  "description": "Develops and operates utility-scale solar and wind parks selling power to state distribution companies under long-term contracts.",
+  "segments": [
+    {
+      "name": "Utility-scale solar",
+      "revenue_share_pct": 85
+    },
+    {
+      "name": "Wind",
+      "revenue_share_pct": 15
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 2600,
+    "revenue_cagr_3y": 28.0,
+    "ebitda_margin": 82.0,
+    "roce": 9.5,
+    "cash": 900,
+    "total_debt": 14500,
+    "interest_expense": 1150,
+    "capex": 4800,
+    "rnd_pct_revenue": 0.2,
+    "export_share_pct": 0,
+    "promoter_holding_pct": 62,
+    "promoter_pledge_pct": 18,
+    "top_customer_share_pct": 55,
+    "receivable_days": 150,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 1,
+    "fcf_conversion_pct": -120,
+    "pe": 72
+  }
+}

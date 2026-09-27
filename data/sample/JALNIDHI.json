@@ -1,0 +1,44 @@
+{
+  "ticker": "JALNIDHI",
+  "name": "Jalnidhi Water Infra Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Industrials",
+  "industry": "Water EPC",
+  "description": "Builds water-supply, wastewater and irrigation projects for state governments on an EPC basis.",
+  "segments": [
+    {
+      "name": "Water & wastewater EPC",
+      "revenue_share_pct": 82
+    },
+    {
+      "name": "Irrigation projects",
+      "revenue_share_pct": 18
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 3100,
+    "revenue_cagr_3y": 17.0,
+    "ebitda_margin": 12.0,
+    "roce": 14.0,
+    "cash": 150,
+    "total_debt": 1900,
+    "interest_expense": 210,
+    "capex": 120,
+    "debt_due_12m": 700,
+    "rnd_pct_revenue": 0.3,
+    "export_share_pct": 5,
+    "promoter_holding_pct": 41,
+    "promoter_pledge_pct": 34,
+    "top_customer_share_pct": 48,
+    "receivable_days": 210,
+    "auditor_changes_3y": 1,
+    "related_party_revenue_pct": 14,
+    "fcf_conversion_pct": 10,
+    "pe": 19
+  }
+}

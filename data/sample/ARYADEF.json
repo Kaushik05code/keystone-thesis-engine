@@ -1,0 +1,43 @@
+{
+  "ticker": "ARYADEF",
+  "name": "Arya Defence Electronics Ltd",
+  "fictional": true,
+  "source": "Fictional sample data bundled with the repo",
+  "exchange": "NSE (fictional)",
+  "currency": "INR",
+  "units": "crore",
+  "as_of": "2026-03-31",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "description": "Designs and builds radar, electronic warfare and avionics systems for the armed forces and defence PSUs.",
+  "segments": [
+    {
+      "name": "Defence radar & electronic warfare",
+      "revenue_share_pct": 78
+    },
+    {
+      "name": "Civil avionics",
+      "revenue_share_pct": 22
+    }
+  ],
+  "metrics": {
+    "revenue_ltm": 4200,
+    "revenue_cagr_3y": 21.0,
+    "ebitda_margin": 23.0,
+    "roce": 27.0,
+    "cash": 1100,
+    "total_debt": 250,
+    "interest_expense": 18,
+    "capex": 310,
+    "rnd_pct_revenue": 7.5,
+    "export_share_pct": 12,
+    "promoter_holding_pct": 51,
+    "promoter_pledge_pct": 0,
+    "top_customer_share_pct": 65,
+    "receivable_days": 140,
+    "auditor_changes_3y": 0,
+    "related_party_revenue_pct": 2,
+    "fcf_conversion_pct": 55,
+    "pe": 58
+  }
+}
